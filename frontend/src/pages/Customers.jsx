@@ -26,7 +26,7 @@ function Customers() {
   const fetchCustomers = async () => {
     setLoading(true);
     try {
-      const res = await api.get("/customers");
+      const res = await api.get("/customers/");
       setCustomers(res.data);
     } catch {
       showNotification("error", "Couldn't load customers. Please refresh the page.");
@@ -97,7 +97,7 @@ function Customers() {
         phone: form.phone.trim(),
       };
 
-      await api.post("/customers", payload);
+      await api.post("/customers/", payload);
       showNotification("success", "Customer added successfully");
       resetForm();
       fetchCustomers();
