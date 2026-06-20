@@ -59,7 +59,7 @@ function Dashboard() {
     let isMounted = true;
 
     api
-      .get("/dashboard")
+      .get("/dashboard/")
       .then((res) => {
         if (isMounted) setData(res.data);
       })
