@@ -28,7 +28,7 @@ function Products() {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const res = await api.get("/products");
+      const res = await api.get("/products/");
       setProducts(res.data);
     } catch {
       showNotification("error", "Couldn't load products. Please refresh the page.");
@@ -111,7 +111,7 @@ function Products() {
         await api.put(`/products/${editingId}`, payload);
         showNotification("success", "Product updated successfully");
       } else {
-        await api.post("/products", payload);
+        await api.post("/products/", payload);
         showNotification("success", "Product added successfully");
       }
 
