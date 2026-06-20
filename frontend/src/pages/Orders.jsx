@@ -29,7 +29,7 @@ function Orders() {
       const [ordersRes, customersRes, productsRes] = await Promise.all([
         api.get("/orders/"),
         api.get("/customers/"),
-        api.get("/products"),
+        api.get("/products/"),
       ]);
 
       setOrders(ordersRes.data);
