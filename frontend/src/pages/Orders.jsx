@@ -27,8 +27,8 @@ function Orders() {
     setLoading(true);
     try {
       const [ordersRes, customersRes, productsRes] = await Promise.all([
-        api.get("/orders"),
-        api.get("/customers"),
+        api.get("/orders/"),
+        api.get("/customers/"),
         api.get("/products"),
       ]);
 
@@ -99,7 +99,7 @@ function Orders() {
 
     setSubmitting(true);
     try {
-      await api.post("/orders", {
+      await api.post("/orders/", {
         customer_id: Number(form.customer_id),
         product_id: Number(form.product_id),
         quantity: Number(form.quantity),
